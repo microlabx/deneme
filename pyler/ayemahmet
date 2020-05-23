@@ -1,0 +1,30 @@
+"""Emoji
+
+Available Commands:
+
+.aymeahmet"""
+
+from telethon import events
+
+import asyncio
+
+from userbot.utils import admin_cmd
+
+@borg.on(admin_cmd("ayemahmet"))
+async def _(event):
+    if event.fwd_from:
+        return
+    animation_interval = 0.3
+    animation_ttl = range(0, 4)
+    await event.edit("ayemahmet")
+    animation_chars = [
+            "Aç",
+            "Aç Yolu",
+            "Aç Yolu Amcýk ",
+            "Aç Yolu Amcýk Ahmet Geldi :D",
+        ]
+
+    for i in animation_ttl:
+        	
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i %5 ])
